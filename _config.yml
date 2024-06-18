@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Invloed van groen op welzijn # Change this to your book title.
+title: Draft # Change this to your book title.
 author: H7/Greenscape Team # Change this to your name (or your team/organization name).
 
 # Force re-execution of notebooks on each build.
