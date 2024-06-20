@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: docs/home
+root: docs/dataset_and_preprocessing
 chapters:
   - file: docs/notebook
-  - file: docs/test
+  - file: docs/perspectieven
