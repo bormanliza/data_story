@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Verbetering van welzijn binnen een stedelijke omgeving &#8212; European Urban Well-Being</title>
+    <title>Reflection &#8212; European Urban Well-Being</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -57,11 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/introductie';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/reflection';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Story vanuit perspectief 1" href="story1.html" />
+    <link rel="next" title="Work distribution" href="work_distribution.html" />
+    <link rel="prev" title="Story from environmental perspective" href="story2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -142,7 +141,7 @@
 
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="introduction.html">
   
   
   
@@ -173,15 +172,18 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
-                    Verbetering van welzijn binnen een stedelijke omgeving
+            <li class="toctree-l1">
+                <a class="reference internal" href="introduction.html">
+                    Introduction
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="story1.html">Story vanuit perspectief 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="perspectieven.html">De levenskwaliteit van een stad</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dataset_and_preprocessing.html">Datasets and Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="story1.html">Story from economic perspective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="story2.html">Story from environmental perspective</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reflection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_distribution.html">Work distribution</a></li>
 </ul>
 
     </div>
@@ -253,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/introductie.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/reflection.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +285,7 @@
       
       
       
-      <li><a href="../_sources/docs/introductie.md" target="_blank"
+      <li><a href="../_sources/docs/reflection.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Verbetering van welzijn binnen een stedelijke omgeving</h1>
+    <h1>Reflection</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,8 +379,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gezonde-leefomgeving">Gezonde Leefomgeving</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#economische-welvaart">Economische Welvaart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback">Feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">Self reflection</a></li>
 </ul>
             </nav>
         </div>
@@ -390,19 +392,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="verbetering-van-welzijn-binnen-een-stedelijke-omgeving">
-<h1>Verbetering van welzijn binnen een stedelijke omgeving<a class="headerlink" href="#verbetering-van-welzijn-binnen-een-stedelijke-omgeving" title="Link to this heading">#</a></h1>
-<p>Het welzijn van mensen kan sterk worden beïnvloed door de omgeving waarin ze leven. Zowel een groene als economische welvarende omgeving kunnen een aanzienlijke impact hebben op het algemene welzijn en de levenskwaliteit van individuen. Wij hebben onderzorgt wat nu het meeste impact heeft op het welzijn van de mens binnen een stedelijke omgeving, door vanuit twee perspectcieven te kijken. Ten eerste behandelen wij de economishe welvarendheid van de stad en ten tweede de leefbaarheid, door te kijken naar bijvoorbeeld de luchtkwaliteit en de hoeveelheid groen.</p>
-<section id="gezonde-leefomgeving">
-<h2>Gezonde Leefomgeving<a class="headerlink" href="#gezonde-leefomgeving" title="Link to this heading">#</a></h2>
-<p>Een gezonde leefomgeving wordt gekenmerkt door schone lucht, water, en een goede infrastructuur voor recreatie en beweging. Studies hebben aangetoond dat een dergelijke omgeving kan bijdragen aan een beter fysiek en mentaal welzijn.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="reflection">
+<h1>Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h1>
+<section id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Link to this heading">#</a></h2>
+<p>Due to circumstances preventing us from attending the peer review session, we arranged a separate meeting with our TA, to recieve feedback on our project. During this meeting, she provided us with personalized feedback on our project, which included the following tips:</p>
+<ul class="simple">
+<li><p>Ensure that all graphs have clear titles and labels for variables, that are relevant for the data story.</p></li>
+<li><p>Avoid drawing conclusions in the text that are not supported by the data presented in the graphs.</p></li>
+<li><p>Ensure that correlations in the graphs are clearly visible; adjust the scale if necessary.</p></li>
+</ul>
+<p>Following this session, we discussed the feedback with our group and implemented it to our project.</p>
 </section>
-<section id="economische-welvaart">
-<h2>Economische Welvaart<a class="headerlink" href="#economische-welvaart" title="Link to this heading">#</a></h2>
-<p>Economische welvaart is een andere cruciale factor die het welzijn van individuen kan verbeteren. Dit omvat factoren zoals inkomen, werkgelegenheid, en toegang tot basisvoorzieningen.</p>
+<section id="self-reflection">
+<h2>Self reflection<a class="headerlink" href="#self-reflection" title="Link to this heading">#</a></h2>
+<p>If the project had extended further, we would have aimed for a broader scope, that is, more cities per country, to achieve greater clarity regarding the correlations discovered. Furthermore, our efforts would have expanded to delve deeper into defining well-being/happiness, enabling us to address a wider array of factors. This approach would have expanded our understanding and provided a more complete analysis of the subject matter.</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -435,12 +440,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="story2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Story from environmental perspective</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="story1.html"
+       href="work_distribution.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Story vanuit perspectief 1</p>
+        <p class="prev-next-title">Work distribution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -460,8 +474,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gezonde-leefomgeving">Gezonde Leefomgeving</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#economische-welvaart">Economische Welvaart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback">Feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-reflection">Self reflection</a></li>
 </ul>
   </nav></div>
 

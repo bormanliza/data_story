@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>De levenskwaliteit van een stad &#8212; European Urban Well-Being</title>
+    <title>Work distribution &#8212; European Urban Well-Being</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/perspectieven';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/work_distribution';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Story vanuit perspectief 1" href="story1.html" />
+    <link rel="prev" title="Reflection" href="reflection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -140,7 +140,7 @@
 
   
 
-<a class="navbar-brand logo" href="introductie.html">
+<a class="navbar-brand logo" href="introduction.html">
   
   
   
@@ -172,14 +172,17 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="introductie.html">
-                    Verbetering van welzijn binnen een stedelijke omgeving
+                <a class="reference internal" href="introduction.html">
+                    Introduction
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="story1.html">Story vanuit perspectief 1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">De levenskwaliteit van een stad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset_and_preprocessing.html">Datasets and Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="story1.html">Story from economic perspective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="story2.html">Story from environmental perspective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reflection.html">Reflection</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Work distribution</a></li>
 </ul>
 
     </div>
@@ -251,7 +254,7 @@
       
       
       
-      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/perspectieven.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/work_distribution.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +284,7 @@
       
       
       
-      <li><a href="../_sources/docs/perspectieven.md" target="_blank"
+      <li><a href="../_sources/docs/work_distribution.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,7 +355,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -363,11 +368,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>De levenskwaliteit van een stad</h1>
+    <h1>Work distribution</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ties-hoenderdos">Ties Hoenderdos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liza-borman">Liza Borman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aimee-oyevaar">Aimée Oyevaar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylke-wierda">Hylke Wierda</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -377,14 +393,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="de-levenskwaliteit-van-een-stad">
-<h1>De levenskwaliteit van een stad<a class="headerlink" href="#de-levenskwaliteit-van-een-stad" title="Link to this heading">#</a></h1>
-<p>Perspectief 1: Hoe hoger de economische welvaart van een stad hoe beter de kwaliteit van leven.
-Argument 1.1: Mensen verdienen meer geld leiden tot betere gezondheidszorgfaciliteiten.</p>
-<p>perspectief 2: Een gezonde en aangename leefomgeving is essentieel voor de algehele levenskwaliteit van een stad.
-Argument 2.1: Groene ruimtes zorgen voor betere leefomstandigheden.</p>
-<p>Perspectief 3: Een goede sociale gezondheid zorgt voor betere kwaliteit van leven
-Argument 3.1: Sterke sociale verbindingen verminderen eenzaamheid en bevorderen positieve mentale gezondheid.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="work-distribution">
+<h1>Work distribution<a class="headerlink" href="#work-distribution" title="Link to this heading">#</a></h1>
+<p>Our way of communicating during the project consisted of following the lectures (werkgroepen). Outside of this, we also had regular meetings, calls and discussed progress through text. To start with, we chose a topic for our project that appealed to all of us, and then started looking for datasets with this in mind. We then cleaned up and merged the datasets we found. However, during the project we came across other subsets that would be very relevant to our research so we added them to our dataset as well. For more information see: (link to dataset and preprocessing). After this, we discussed which graphs would best suit our research and then started developing them. Using the graphs and a story in mind, we then started writing the story. Finally, we dealt with the formatting of the graphs and the text, using the feedback given to us by our TA.</p>
+<section id="ties-hoenderdos">
+<h2>Ties Hoenderdos<a class="headerlink" href="#ties-hoenderdos" title="Link to this heading">#</a></h2>
+<p>Ties was mainly responsible for creating the graphs. Also, he was responsible for cleaning and merging the various datasets. He participated in the making of the graphs and their associated captions, as well as coming up with the overal design of the project.</p>
+</section>
+<section id="liza-borman">
+<h2>Liza Borman<a class="headerlink" href="#liza-borman" title="Link to this heading">#</a></h2>
+<p>Liza was responsible for finding datasets and explaining graphs in the datastory. She also looked into several papers to support the main storyline.</p>
+</section>
+<section id="aimee-oyevaar">
+<h2>Aimée Oyevaar<a class="headerlink" href="#aimee-oyevaar" title="Link to this heading">#</a></h2>
+<p>Aimée was responsible for finding the datasets to form and improve the main storyline and also helped improving the graphs. Furthermore, she looked found several scientific studies that nourish the perspectives. During the project she continued to assist on the storyline and improving the graphs.</p>
+</section>
+<section id="hylke-wierda">
+<h2>Hylke Wierda<a class="headerlink" href="#hylke-wierda" title="Link to this heading">#</a></h2>
+<p>Hylke was also involved in improving the graphs and creating the basis of the storyline. Furthermore, he looked into several research papers that support the perspectives and continued to assist on the storyline and the graphs during the project.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -418,12 +445,12 @@ Argument 3.1: Sterke sociale verbindingen verminderen eenzaamheid en bevorderen 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="story1.html"
+       href="reflection.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Story vanuit perspectief 1</p>
+        <p class="prev-next-title">Reflection</p>
       </div>
     </a>
 </div>
@@ -432,6 +459,24 @@ Argument 3.1: Sterke sociale verbindingen verminderen eenzaamheid en bevorderen 
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ties-hoenderdos">Ties Hoenderdos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liza-borman">Liza Borman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aimee-oyevaar">Aimée Oyevaar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hylke-wierda">Hylke Wierda</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
