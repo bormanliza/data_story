@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -380,6 +380,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
 </ul>
             </nav>
         </div>
@@ -393,14 +394,20 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="datasets-and-preprocessing">
 <h1>Datasets and Preprocessing<a class="headerlink" href="#datasets-and-preprocessing" title="Link to this heading">#</a></h1>
-<p>At first, each member of the team had to find datasets to match the perspectives for our research. During the first team call, every dataset was discussed along with possible correlations. In the end, we chose the … datasets from Kaggle to start, as these datasets have correlations that could be of use for a potential topic. After some brainstorming during team meetings, we came to the conclusion to focus on the welbeing of citizens in Europian capitals, as the datasets contain sufficient variables that can be used for two perspectives: ‘influences of economic prosperity’ and ‘influences of environmental prosperity’.</p>
+<p>At first, each member of the team had to find datasets to match the perspectives for our research. During the first team call, every dataset was discussed along with possible correlations. In the end, we chose the Urban quality and Happiness index and the overall ua scores datasets from Kaggle as a starting point, as these datasets have correlations that could be of use for a potential topic. After some brainstorming during team meetings, we came to the conclusion to focus on the welbeing of citizens in Europian capitals, as the datasets contain sufficient variables that can be used for two perspectives: ‘influences of economic prosperity’ and ‘influences of environmental prosperity’.</p>
 <p>During our project, we encountered new insights and, after consulting with our TA, decided to look for additional datasets. For our project, we primarily focused on the correlation of various variables with the happiness score, as it provided an indication of the well-being of people within a particular city.</p>
 <section id="cleaning">
 <h2>Cleaning<a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h2>
-<p>We had to go through two phases in order to clean everything properly. At first we renamed columns and restructured them to merge them together. We manually merged the columns by inspecting them and merging the ones that contained roughly the same content. We excluded Columns that were not of use.</p>
-<p>The second phase involves normalising the data. In general, this has been done by thoroughly inspecting the unique values for each column and combine values that represent similar meaning.</p>
-<p>We decided to use CSV as the file type for our final datasets. This allowed us to create a well organized set. It resulted in a …MB CSV file, rather than a …MB CSV file.</p>
-<p>It resluted several sets. One has a total of …columns spanning … datasets that have been reduced to a single dataset containing … columns and … rows and another that has …columns and … rows.</p>
+<p>We had to go through two phases in order to clean everything properly. At first we renamed columns and restructured them to merge them together. We manually merged the columns by inspecting them and merging the ones that contained extra data on overlapping cities.</p>
+<p>It resluted several sets. One has a total of 34 columns spanning 2 datasets that first were two datasets with 19 and 16 columns. (One column (city) remains the same)</p>
+</section>
+<section id="variable-descriptions">
+<h2>Variable descriptions<a class="headerlink" href="#variable-descriptions" title="Link to this heading">#</a></h2>
+<p>The variables in the final datasets can be classified in the following order:</p>
+<ul class="simple">
+<li><p>Continuous / Ratio variables: <code class="docutils literal notranslate"><span class="pre">Happiness_Score</span></code>, <code class="docutils literal notranslate"><span class="pre">Healthcare</span></code>, <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">Economy</span></code>, <code class="docutils literal notranslate"><span class="pre">Profit</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">lng</span></code>, <code class="docutils literal notranslate"><span class="pre">Air_Quality_Index</span></code>, <code class="docutils literal notranslate"><span class="pre">Pollution</span></code></p></li>
+<li><p>Discrete / Nominal variables: <code class="docutils literal notranslate"><span class="pre">City</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code></p></li>
+</ul>
 </section>
 </section>
 
@@ -469,6 +476,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
 </ul>
   </nav></div>
 

@@ -1,5 +1,12 @@
 # Introduction
 
-Throughout the world, there has been an enduring pursuit to improve the quality of life and well-being in urban environments, a pursuit that has increasingly taken center stage on global political agendas. Governments and researchers alike are actively investigating the myriad factors that shape the well-being of city residents. This comprehensive data analysis aims to explore these multifaceted influences using data gathered from a variety of sources. It examines intricate relationships such as the impact of income levels on happiness, the effects of air quality and the availability of green spaces on overall happiness scores, and the interconnected dynamics between safety, healthcare provisions, educational opportunities, and economic conditions within urban settings.
+Quality of life and well-being in urban settings are now ascertained to be at the forefront of global political agendas worldwide. Governments and researchers are trying to establish what complicated factors may influence the well-being of city residents. The objective of this analysis is, therefore, to explore the influences that exist on the well-being of urban residents by making use of various data sources. Complex relationships among variables were assessed, for instance: the influence of income level as a determinant factor on happiness; air quality and available green spaces as determinants of the quality score for general well-being; the interplay of safety, healthcare facilities, educational opportunities, and the economy in a city.
 
-By delving into these complex urban factors and their implications for residents' well-being, this analysis seeks to provide deeper insights. These insights are crucial for policymakers as they formulate strategies to enhance urban livability, foster community resilience, and promote sustainable urban development. Understanding how these factors interplay can pave the way for policies that not only address immediate challenges but also contribute to the long-term welfare and happiness of urban populations globally.
+The objective of this study is to investigate the influence factors concerning well-being from two central perspectives: economic influence and sustainability. The analysis thus provides insights into such deep urban factors and their consequences on the state of well-being among the residents. These are very important insights in helping policymakers, while developing strategies for enhancing urban livability, community resilience, and sustainable urban development. While understanding those economic influences, together with the sustainability concepts of urban environments, can form a sound basis for policy formulation that solves immediate challenges and brings long-lasting welfare and happiness to urban populations worldwide.
+
+Authors
+
+- Hylke Wierda
+- Ties Hoenderdos
+- Liza Borman
+- Aimée Oyevaar
