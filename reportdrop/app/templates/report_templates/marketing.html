@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}{{ report.title }} — ReportDrop{% endblock %}
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 py-10">
+    <!-- Header with gradient -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 mb-8 text-white">
+        <h1 class="text-3xl font-bold">{{ report.title }}</h1>
+        <p class="text-indigo-100 mt-2">Marketing Performance Report &bull; {{ report.created_at.strftime('%d %B %Y') }}</p>
+        <div class="flex gap-6 mt-6">
+            <div>
+                <div class="text-sm text-indigo-200">Data Points</div>
+                <div class="text-2xl font-bold">{{ row_count }}</div>
+            </div>
+            <div>
+                <div class="text-sm text-indigo-200">Metrics</div>
+                <div class="text-2xl font-bold">{{ columns | length }}</div>
+            </div>
+            <div>
+                <div class="text-sm text-indigo-200">KPIs</div>
+                <div class="text-2xl font-bold">{{ summary | length }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="grid md:grid-cols-4 gap-4 mb-8">
+        {% for col, stats in summary.items() %}
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+            <div class="text-xs text-gray-400 uppercase tracking-wide mb-1">{{ col }}</div>
+            <div class="text-2xl font-bold text-gray-900">{{ "%.1f" | format(stats.mean) }}</div>
+            <div class="flex justify-between text-xs text-gray-400 mt-2">
+                <span>Low: {{ "%.1f" | format(stats['min']) }}</span>
+                <span>High: {{ "%.1f" | format(stats['max']) }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Charts -->
+    {% for chart in charts %}
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ chart.title }}</h2>
+        <div>{{ chart.html | safe }}</div>
+    </div>
+    {% endfor %}
+
+    <!-- Data Table -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 overflow-x-auto">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Raw Data</h2>
+        <table class="w-full text-sm">
+            <thead>
+                <tr class="border-b-2 border-indigo-100">
+                    {% for col in columns %}
+                    <th class="text-left py-2 px-3 text-indigo-600 font-semibold text-xs uppercase tracking-wide">{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in preview %}
+                <tr class="border-b border-gray-50 hover:bg-indigo-50">
+                    {% for col in columns %}
+                    <td class="py-2 px-3 text-gray-700">{{ row[col] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

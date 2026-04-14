@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}{{ report.title }} — ReportDrop{% endblock %}
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 py-10">
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">{{ report.title }}</h1>
+        <p class="text-gray-500 mt-1">Generated on {{ report.created_at.strftime('%d %B %Y') }} &bull; {{ row_count }} rows &bull; {{ columns | length }} columns</p>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Key Metrics</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            {% for col, stats in summary.items() %}
+            <div class="bg-gray-50 rounded-xl p-4">
+                <div class="text-sm text-gray-500 mb-1">{{ col }}</div>
+                <div class="text-2xl font-bold text-indigo-600">{{ "%.1f" | format(stats.mean) }}</div>
+                <div class="text-xs text-gray-400 mt-1">
+                    Min: {{ "%.1f" | format(stats['min']) }} &bull; Max: {{ "%.1f" | format(stats['max']) }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Charts -->
+    {% for chart in charts %}
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ chart.title }}</h2>
+        <div>{{ chart.html | safe }}</div>
+    </div>
+    {% endfor %}
+
+    <!-- Data Preview -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8 overflow-x-auto">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Data Preview</h2>
+        <table class="w-full text-sm">
+            <thead>
+                <tr class="border-b border-gray-200">
+                    {% for col in columns %}
+                    <th class="text-left py-2 px-3 text-gray-500 font-medium">{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in preview %}
+                <tr class="border-b border-gray-50 hover:bg-gray-50">
+                    {% for col in columns %}
+                    <td class="py-2 px-3 text-gray-700">{{ row[col] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Billing — ReportDrop{% endblock %}
+{% block content %}
+<div class="max-w-xl mx-auto px-4 py-10">
+    <h1 class="text-2xl font-bold text-gray-900 mb-8">Billing</h1>
+
+    {% if request.query_params.get('success') %}
+    <div class="bg-green-50 text-green-700 px-4 py-3 rounded-lg mb-6">
+        Payment successful! You now have Pro access.
+    </div>
+    {% endif %}
+    {% if request.query_params.get('canceled') %}
+    <div class="bg-yellow-50 text-yellow-700 px-4 py-3 rounded-lg mb-6">
+        Payment canceled. You can try again anytime.
+    </div>
+    {% endif %}
+
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        {% if user.is_subscribed %}
+        <div class="flex items-center gap-3 mb-4">
+            <span class="bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full">Pro</span>
+            <span class="text-gray-700 font-medium">Active subscription</span>
+        </div>
+        <p class="text-gray-500">You have unlimited reports and PDF export.</p>
+        {% else %}
+        <div class="flex items-center gap-3 mb-4">
+            <span class="bg-gray-100 text-gray-600 text-sm font-medium px-3 py-1 rounded-full">Free</span>
+            <span class="text-gray-700 font-medium">Limited to 3 reports</span>
+        </div>
+        <p class="text-gray-500 mb-6">Upgrade to Pro for unlimited reports and PDF export.</p>
+        <form method="POST" action="/create-checkout-session">
+            <button type="submit"
+                class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">
+                Upgrade to Pro — &euro;9/mo
+            </button>
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

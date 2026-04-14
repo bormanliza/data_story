@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ReportDrop{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-indigo-600">ReportDrop</a>
+            <div class="flex gap-4 items-center">
+                {% if user is defined and user %}
+                    <span class="text-sm text-gray-500">{{ user.email }}</span>
+                    <a href="/dashboard" class="text-sm text-gray-700 hover:text-indigo-600">Dashboard</a>
+                    <a href="/upload" class="text-sm bg-indigo-600 text-white px-3 py-1.5 rounded-lg hover:bg-indigo-700">New Report</a>
+                    <a href="/logout" class="text-sm text-gray-500 hover:text-gray-700">Logout</a>
+                {% else %}
+                    <a href="/login" class="text-sm text-gray-700 hover:text-indigo-600">Login</a>
+                    <a href="/register" class="text-sm bg-indigo-600 text-white px-3 py-1.5 rounded-lg hover:bg-indigo-700">Sign Up</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="text-center text-gray-400 text-sm py-8">
+        ReportDrop &mdash; Automated client reports
+    </footer>
+</body>
+</html>

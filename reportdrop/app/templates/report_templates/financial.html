@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}{{ report.title }} — ReportDrop{% endblock %}
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 py-10">
+    <!-- Header -->
+    <div class="border-b-2 border-gray-900 pb-6 mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">{{ report.title }}</h1>
+        <p class="text-gray-500 mt-1">Financial Report &bull; {{ report.created_at.strftime('%d %B %Y') }} &bull; {{ row_count }} records</p>
+    </div>
+
+    <!-- Financial Summary -->
+    <div class="bg-gray-900 rounded-2xl p-6 mb-8 text-white">
+        <h2 class="text-sm uppercase tracking-wide text-gray-400 mb-4">Financial Summary</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            {% for col, stats in summary.items() %}
+            <div>
+                <div class="text-sm text-gray-400">{{ col }}</div>
+                <div class="text-3xl font-bold mt-1">{{ "%.2f" | format(stats.mean) }}</div>
+                <div class="grid grid-cols-3 gap-2 mt-3 text-xs text-gray-400">
+                    <div>
+                        <div>Min</div>
+                        <div class="text-white font-medium">{{ "%.2f" | format(stats['min']) }}</div>
+                    </div>
+                    <div>
+                        <div>Median</div>
+                        <div class="text-white font-medium">{{ "%.2f" | format(stats['50%']) }}</div>
+                    </div>
+                    <div>
+                        <div>Max</div>
+                        <div class="text-white font-medium">{{ "%.2f" | format(stats['max']) }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Charts -->
+    {% for chart in charts %}
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">{{ chart.title }}</h2>
+        <div>{{ chart.html | safe }}</div>
+    </div>
+    {% endfor %}
+
+    <!-- Data Table -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 overflow-x-auto">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Detailed Records</h2>
+        <table class="w-full text-sm">
+            <thead>
+                <tr class="border-b-2 border-gray-300">
+                    {% for col in columns %}
+                    <th class="text-left py-2 px-3 text-gray-900 font-semibold text-xs uppercase tracking-wide">{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in preview %}
+                <tr class="border-b border-gray-100 hover:bg-gray-50 {% if loop.index is odd %}bg-gray-50{% endif %}">
+                    {% for col in columns %}
+                    <td class="py-2 px-3 text-gray-700 font-mono text-xs">{{ row[col] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

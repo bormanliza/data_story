@@ -1,0 +1,4 @@
+/* Custom styles — Tailwind handles most styling via CDN */
+.plotly-graph-div {
+    width: 100% !important;
+}

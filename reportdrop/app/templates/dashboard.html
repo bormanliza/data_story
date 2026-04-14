@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — ReportDrop{% endblock %}
+{% block content %}
+<div class="max-w-4xl mx-auto px-4 py-10">
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-bold text-gray-900">Your Reports</h1>
+        <a href="/upload" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">
+            + New Report
+        </a>
+    </div>
+
+    {% if reports %}
+    <div class="grid gap-4">
+        {% for report in reports %}
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+            <div>
+                <h3 class="font-semibold text-gray-900">{{ report.title }}</h3>
+                <div class="flex gap-3 mt-1">
+                    <span class="text-sm text-gray-500">{{ report.template_type | capitalize }} template</span>
+                    <span class="text-sm text-gray-400">{{ report.created_at.strftime('%d %b %Y') }}</span>
+                </div>
+            </div>
+            <div class="flex gap-3 items-center">
+                <a href="/report/{{ report.public_slug }}" class="text-indigo-600 text-sm hover:underline">View</a>
+                <button onclick="navigator.clipboard.writeText(window.location.origin + '/report/{{ report.public_slug }}')"
+                    class="text-gray-500 text-sm hover:text-indigo-600 cursor-pointer">Copy Link</button>
+                <form method="POST" action="/report/{{ report.public_slug }}/delete" class="inline">
+                    <button type="submit" class="text-red-400 text-sm hover:text-red-600 cursor-pointer"
+                        onclick="return confirm('Delete this report?')">Delete</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-20">
+        <p class="text-gray-500 mb-4">No reports yet. Upload your first CSV to get started.</p>
+        <a href="/upload" class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700">
+            Upload CSV
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
